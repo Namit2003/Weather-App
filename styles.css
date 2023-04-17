@@ -19,8 +19,9 @@
 body {
     /* margin: 0; */
     font-family: Arial, Helvetica, sans-serif;
-    width: 400px;
-    margin: auto;
+    max-width: 800px;
+    margin: var(--spacing-regular) auto;
+    background-color: azure;
 }
 
 h1,
@@ -37,7 +38,9 @@ p {
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "current current"
+    grid-template-areas:
+        "search search"
+        "current current"
         "hour hour"
         "five five"
         "feels humidity"
@@ -50,6 +53,14 @@ p {
     border: 1px solid;
     border-radius: var(--spacing-regular);
     padding: var(--spacing-regular);
+}
+
+#search {
+    grid-area: search;
+    font-size: var(--font-large);
+    padding: var(--spacing-regular);
+    border-radius: var(--spacing-regular);
+    background-color: antiquewhite;
 }
 
 /* styles related to current weather data */
@@ -128,7 +139,8 @@ p {
 .fiveday-forecast-container .daywise-forecast .min-temp {
     opacity: 60%;
 }
-.fiveday-forecast-container .daywise-forecast .max-temp{
+
+.fiveday-forecast-container .daywise-forecast .max-temp {
     justify-self: end;
 }
 
@@ -136,6 +148,7 @@ p {
     width: 75px;
     height: 75px;
 }
+
 .fiveday-forecast-container .daywise-forecast .day {
     text-transform: capitalize;
     justify-self: start;
@@ -149,4 +162,16 @@ p {
 #humidity {
     grid-area: humidity;
     text-align: center;
+}
+
+@media (width>=650px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "search search search search"
+            "current current current current"
+            "hour hour five five"
+            "feels humidity five five"
+        ;
+    }    
 }

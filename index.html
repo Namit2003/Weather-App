@@ -11,11 +11,15 @@
 
 <body>
     <main class="container">
+        <input list="cities" type="search" id="search" name="search" placeholder="Search City" autocomplete="off">
+        <datalist id="cities">
+        </datalist>
+
         <article id="current-forecast">
             <h1 class="city">City</h1>
-            <p class="temp">Temp</p>
-            <p class="description">Description</p>
-            <p class="min-max-temp">High Low</p>
+            <p class="temp">---</p>
+            <p class="description">------------</p>
+            <p class="min-max-temp">--- ---</p>
         </article>
         <article id="hourly-forecast">
             <h2>Hourly Forecast</h2>
@@ -30,11 +34,11 @@
         </section>
         <article id="feels-like">
             <h1>Feels like</h1>
-            <p class="feels-like-temp">temp</p>
+            <p class="feels-like-temp">---</p>
         </article>
         <article id="humidity">
             <h1>Humidity</h1>
-            <p class="humidity-value">value</p>
+            <p class="humidity-value">---</p>
         </article>
     </main>
     <script src="main.js"></script>
