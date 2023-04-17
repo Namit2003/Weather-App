@@ -73,12 +73,12 @@ const loadHumidity = ({ main: { humidity } }) => {
     container.querySelector(".humidity-value").textContent = `${humidity} %`;
 }
 
-const loadForecastUsingGeolocation=()=>{
-    navigator.geolocation.getCurrentPosition(({coords})=>{
-        const {latitude:lat,longitude:lon}=coords;
-        selectedCity={lat,lon};
+const loadForecastUsingGeolocation = () => {
+    navigator.geolocation.getCurrentPosition(({ coords }) => {
+        const { latitude: lat, longitude: lon } = coords;
+        selectedCity = { lat, lon };
         loadData();
-    },error=>console.log(error))
+    }, error => console.log(error))
 }
 
 const loadData = async () => {
@@ -180,6 +180,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     const searchInput = document.querySelector("#search");
     searchInput.addEventListener("input", debounceSearch);
     searchInput.addEventListener("change", handleCitySelection);
-
-
 })
