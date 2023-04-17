@@ -100,8 +100,45 @@ p {
     font-weight: var(--font-semibold);
 }
 
+/* styles related to fiveday weather data */
+
 #fiveday-forecast {
     grid-area: five;
+    text-align: center;
+}
+
+#fiveday-forecast .fiveday-forecast-container {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.fiveday-forecast-container .daywise-forecast {
+    display: grid;
+    grid-template: auto/repeat(4, 1fr);
+    gap: var(--spacing-regular);
+    place-items: center;
+}
+
+.fiveday-forecast-container .daywise-forecast .min-temp,
+.fiveday-forecast-container .daywise-forecast .max-temp {
+    font-size: var(--font-regular);
+    font-weight: var(--font-semibold);
+}
+
+.fiveday-forecast-container .daywise-forecast .min-temp {
+    opacity: 60%;
+}
+.fiveday-forecast-container .daywise-forecast .max-temp{
+    justify-self: end;
+}
+
+.fiveday-forecast-container .daywise-forecast .icon {
+    width: 75px;
+    height: 75px;
+}
+.fiveday-forecast-container .daywise-forecast .day {
+    text-transform: capitalize;
+    justify-self: start;
 }
 
 #feels-like {
