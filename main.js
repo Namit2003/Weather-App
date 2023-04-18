@@ -4,7 +4,7 @@ let selectedCityText;
 let selectedCity;
 
 const getCitiesUsingGeolocation = async (searchText) => {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=${API_KEY}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=${API_KEY}`);
     return response.json()
 }
 
